@@ -1,3 +1,6 @@
 [submodule "frontend"]
 	path = frontend
-	url = ./frontend_cp
+	url = https://github.com/Ryosuke28/taskwave_frontend
+[submodule "web-bff"]
+	path = web-bff
+	url = https://github.com/Ryosuke28/taskwave_web-bff
