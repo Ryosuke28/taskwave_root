@@ -4,3 +4,9 @@
 [submodule "web-bff"]
 	path = web-bff
 	url = https://github.com/Ryosuke28/taskwave_web-bff
+[submodule "auth-api"]
+	path = auth-api
+	url = https://github.com/Ryosuke28/taskwave_auth-api
+[submodule "task-api"]
+	path = task-api
+	url = https://github.com/Ryosuke28/taskwave_task-api

@@ -30,6 +30,38 @@ services:
     links:
       - db
 
+  auth-api:
+    build: ./auth-api
+    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -b '0.0.0.0'"
+    ports:
+      - '3011:3000'
+    volumes:
+      - './auth-api:/auth-api'
+    tty: true
+    stdin_open: true
+    # dbのサービスを先に起動するようにdepends_onで指定
+    depends_on:
+      - db
+    # dbのサービスにアクセスできるようlinksで指定
+    links:
+      - db
+
+  task-api:
+    build: ./task-api
+    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -b '0.0.0.0'"
+    ports:
+      - '3012:3000'
+    volumes:
+      - './task-api:/task-api'
+    tty: true
+    stdin_open: true
+    # dbのサービスを先に起動するようにdepends_onで指定
+    depends_on:
+      - db
+    # dbのサービスにアクセスできるようlinksで指定
+    links:
+      - db
+
   db:
     image: postgres
     environment:
